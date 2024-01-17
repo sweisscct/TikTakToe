@@ -39,7 +39,11 @@ public class TikTakToe {
     public static void main(String[] args) {
         String[][] gridArray = setupGridArray();
         displayGrid(gridArray);
+        updateGrid(gridArray, new int[] {0, 0}, "X");
         displayGrid(gridArray);
+        updateGrid(gridArray, new int[] {1, 2}, "O");
+        displayGrid(gridArray);
+        
     }
     
     public static void displayGrid(String[][] gridArray) {
@@ -49,5 +53,22 @@ public class TikTakToe {
             }
             System.out.println("");
         }
+    }
+    
+    public static void updateGrid(String[][] gridArray, int[] position, String letter) {
+        // Position is 3x3
+        // position = {2, 0}
+        gridArray[position[0]][2*position[1]] = letter; // only even cols -  use 2*n+1 for only odd cols
+        /*
+        position
+        0 1 2
+        0 1 2
+        0 1 2
+        
+        grid
+        x|x|x|
+        012345
+           
+        */
     }
 }
