@@ -9,11 +9,8 @@ package tiktaktoe;
  * @author celeb
  */
 public class TikTakToe {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
+    
+    public static String[][] setupGridArray() {
         String[][] gridArray = new String[3][5];
         gridArray[0][0] = "_";
         gridArray[0][1] = "|";
@@ -33,6 +30,19 @@ public class TikTakToe {
         gridArray[2][3] = "|";
         gridArray[2][4] = " ";  
         
+        return gridArray;
+    }
+    
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        String[][] gridArray = setupGridArray();
+        displayGrid(gridArray);
+        displayGrid(gridArray);
+    }
+    
+    public static void displayGrid(String[][] gridArray) {
         for (int row=0; row<gridArray.length; row++) {
             for (int col=0; col< gridArray[row].length; col++) {
                 System.out.print(gridArray[row][col]);
@@ -40,5 +50,4 @@ public class TikTakToe {
             System.out.println("");
         }
     }
-    
 }
