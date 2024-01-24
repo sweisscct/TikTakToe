@@ -16,12 +16,14 @@ public class TikTakToe {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        String[][] gridArray = setupGridArray();
-        displayGrid(gridArray);
-        updateGrid(gridArray, new int[] {0, 0}, "X");
-        displayGrid(gridArray);
-        updateGrid(gridArray, new int[] {1, 2}, "O");
-        displayGrid(gridArray);
+        
+        Grid grid = new Grid();
+        
+        grid.displayGrid();
+        grid.updateGrid(new int[] {0, 0}, "X");
+        grid.displayGrid();
+        grid.updateGrid(new int[] {1, 2}, "O");
+        grid.displayGrid();
         
 //        Integer.parseInt("5");
 //        10.parseInt();

@@ -56,23 +56,35 @@ public class Grid {
     private String[][] setupGridArray() {
         // Makes it the thrid odd number
         String[][] gridArray = new String[height][2*width-1]; 
-        gridArray[0][0] = "_";
-        gridArray[0][1] = "|";
-        gridArray[0][2] = "_";
-        gridArray[0][3] = "|";
-        gridArray[0][4] = "_";
         
-        gridArray[1][0] = "_";
-        gridArray[1][1] = "|";
-        gridArray[1][2] = "_";
-        gridArray[1][3] = "|";
-        gridArray[1][4] = "_";
-
-        gridArray[2][0] = " ";
-        gridArray[2][1] = "|";
-        gridArray[2][2] = " ";
-        gridArray[2][3] = "|";
-        gridArray[2][4] = " ";  
+        for (int row = 0; row < gridArray.length; row++) {
+            for (int col = 0; col < gridArray[row].length; col++) {
+                if (col%2==1) {
+                    gridArray[row][col] = "|";
+                } else if (row < gridArray.length-1) {
+                    gridArray[row][col] = "_";
+                } else {
+                    gridArray[row][col] = " ";
+                }
+            }
+        }
+//        gridArray[0][0] = "_";
+//        gridArray[0][1] = "|";
+//        gridArray[0][2] = "_";
+//        gridArray[0][3] = "|";
+//        gridArray[0][4] = "_";
+//        
+//        gridArray[1][0] = "_";
+//        gridArray[1][1] = "|";
+//        gridArray[1][2] = "_";
+//        gridArray[1][3] = "|";
+//        gridArray[1][4] = "_";
+//
+//        gridArray[2][0] = " ";
+//        gridArray[2][1] = "|";
+//        gridArray[2][2] = " ";
+//        gridArray[2][3] = "|";
+//        gridArray[2][4] = " ";  
         
         return gridArray;
     }
