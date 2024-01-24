@@ -59,8 +59,10 @@ public class Grid {
         
         for (int row = 0; row < gridArray.length; row++) {
             for (int col = 0; col < gridArray[row].length; col++) {
+                // if col is odd
                 if (col%2==1) {
                     gridArray[row][col] = "|";
+                    // if not last row
                 } else if (row < gridArray.length-1) {
                     gridArray[row][col] = "_";
                 } else {
