@@ -10,8 +10,19 @@ package tiktaktoe;
  */
 public class Grid {
     
+    private boolean active;
+
+    public boolean isActive() {
+        return active;
+    }
+    
     private int height;
     private int width;
+    
+    
+    
+    
+    
     
     private String[][] gridArray;
 
@@ -33,6 +44,14 @@ public class Grid {
                 System.out.print(gridArray[row][col]);
             }
             System.out.println("");
+            // Getting otherNumber directly from the TikTakToe class.
+            System.out.println("Class: " + TikTakToe.otherNumber);
+            TikTakToe game = new TikTakToe();
+            System.out.println("Game 1 og: " + game.nonStaticNumber);
+            game.nonStaticNumber = 20;
+            System.out.println("Game 1 new: " + game.nonStaticNumber);
+            TikTakToe game2 = new TikTakToe();
+            System.out.println("Game 2: " + game2.nonStaticNumber);
         }
     }
     
@@ -88,6 +107,27 @@ public class Grid {
 //        gridArray[2][3] = "|";
 //        gridArray[2][4] = " ";  
         
+        return gridArray;
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public void setWidth(int width) {
+        if (width > 0) {
+            this.width = width;
+        } else {
+            System.out.println("Trying to set the grid width to a negative number");
+        }
+    }
+    
+    public void incrementHeight() {
+        height++;
+    }
+    
+
+    public String[][] getGridArray() {
         return gridArray;
     }
 }

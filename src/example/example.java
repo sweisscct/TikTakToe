@@ -4,6 +4,7 @@
  */
 package example;
 
+import java.util.Random;
 import tiktaktoe.Grid;
 
 /**
@@ -12,4 +13,21 @@ import tiktaktoe.Grid;
  */
 public class example extends Grid {
     Grid grid = new Grid();
+    
+    Random r = new Random();
+    
+    public void random() {
+        System.out.println(r.nextInt(100));
+        
+        // Random int between 23 and 150?
+        int start = 23;
+        int end = 150;
+        
+        // 0-> bound  // 23 -> bound + 23
+//        r.nextInt() + start;
+        System.out.println(r.nextInt(end-start) + start);
+        
+        
+        
+    }
 }
